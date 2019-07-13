@@ -16,7 +16,7 @@ CandidateList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      completed: PropTypes.bool.isRequired
+      approved: PropTypes.bool.isRequired
     }).isRequired
   ).isRequired,
   actions: PropTypes.object.isRequired
