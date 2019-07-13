@@ -4,6 +4,24 @@ const initialState = [
     image: "http://",
     name: "teste",
     approved: false
+  },
+  {
+    id: 1,
+    image: "http://",
+    name: "teste",
+    approved: false
+  },
+  {
+    id: 2,
+    image: "http://",
+    name: "teste",
+    approved: false
+  },
+  {
+    id: 3,
+    image: "http://",
+    name: "teste",
+    approved: false
   }
 ];
 
