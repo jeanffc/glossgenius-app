@@ -1,4 +1,4 @@
-import {fetchCandidatesPending, fetchCandidatesSuccess, fetchCandidatesError} from '../store/actions/candidates';
+import {fetchCandidatesPending, fetchCandidatesSuccess, fetchCandidatesError} from '../store/ducks/candidates';
 
 export default function fetchCandidates() {
     return dispatch => {

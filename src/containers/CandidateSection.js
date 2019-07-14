@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as CandidateActions from "../store/actions/candidates";
+import * as CandidateActions from "../store/ducks/candidates";
 import CandidateList from "../components/CandidateList";
 
 const mapStateToProps = state => ({

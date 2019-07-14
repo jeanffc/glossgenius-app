@@ -1,3 +1,39 @@
+// Action Types
+
+export const APPROVE_CANDIDATE = "APPROVE_CANDIDATE";
+export const DENY_CANDIDATE = "DENY_CANDIDATE";
+export const FETCH_CANDIDATES_PENDING = "FETCH_CANDIDATES_PENDING";
+export const FETCH_CANDIDATES_SUCCESS = "FETCH_CANDIDATES_SUCCESS";
+export const FETCH_CANDIDATES_ERROR = "FETCH_CANDIDATES_ERROR";
+
+// Action Creators
+
+export const approveCandidate = id => ({
+  type: APPROVE_CANDIDATE,
+  id
+});
+
+export const denyCandidate = id => ({
+  type: DENY_CANDIDATE,
+  id
+});
+
+export const fetchCandidatesPending = () => ({
+  type: FETCH_CANDIDATES_PENDING
+});
+
+export const fetchCandidatesSuccess = candidates => ({
+  type: FETCH_CANDIDATES_SUCCESS,
+  candidates
+});
+
+export const fetchCandidatesError = error => ({
+  type: FETCH_CANDIDATES_ERROR,
+  error: error
+});
+
+// Reducers
+
 const initialState = {
   pending: false,
   error: null,
@@ -44,14 +80,14 @@ const initialState = {
 export default function candidates(state = initialState, action) {
   let candidates = state.candidates;
   switch (action.type) {
-    case "APPROVE_CANDIDATE":
+    case APPROVE_CANDIDATE:
       candidates = state.candidates.map(candidate =>
         candidate.id === action.id
           ? { ...candidate, approved: !candidate.approved }
           : candidate
       );
       return { ...state, candidates };
-    case "DENY_CANDIDATE":
+    case DENY_CANDIDATE:
       candidates = state.candidates.filter(
         candidate => candidate.id !== action.id
       );
@@ -61,7 +97,3 @@ export default function candidates(state = initialState, action) {
       return state;
   }
 }
-
-// export const getCandidates = state => state.candidates;
-// export const getCandidatesPending = state => state.pending;
-// export const getCandidatesError = state => state.error;

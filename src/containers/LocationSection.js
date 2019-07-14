@@ -1,6 +1,4 @@
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as CandidateActions from "../store/actions/candidates";
 import LocationView from "../components/LocationView";
 
 const mapStateToProps = state => ({
@@ -9,11 +7,7 @@ const mapStateToProps = state => ({
     pending: state.candidates.pending
 });
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(CandidateActions, dispatch)
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(LocationView);

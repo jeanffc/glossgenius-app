@@ -21,8 +21,7 @@ LocationView.propTypes = {
       full_name: PropTypes.string.isRequired,
       approved: PropTypes.bool.isRequired
     }).isRequired
-  ).isRequired,
-  actions: PropTypes.object.isRequired
+  ).isRequired
 };
 
 export default LocationView;
