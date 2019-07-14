@@ -9,7 +9,6 @@ import { IoIosCheckmark, IoIosClose } from "react-icons/io";
 
 const ListItem = styled.li`
   padding: 15px;
-  border
 `;
 
 const ApproveButton = styled.button`
@@ -32,6 +31,19 @@ const DenyButton = styled.button`
   width: 30px;
   padding: 0;
   margin: 0 0 0 20px;
+`;
+
+const Title = styled.p`
+  font-size: 1em;
+  padding: 0;
+  margin: 0 0 5px 0;
+`;
+
+const SubTitle = styled.p`
+  font-size: 0.8em;
+  opacity: 0.6;
+  padding: 0;
+  margin: 0;
 `;
 
 const textContainer = {
@@ -59,10 +71,10 @@ export default class CandidateItem extends Component {
             </Box>
             <Box display="flex" flexDirection="column" style={textContainer}>
               <Box>
-                <label>{candidate.full_name}</label>
+                <Title>{candidate.full_name}</Title>
               </Box>
               <Box>
-                <label>{candidate.business_name}</label>
+                <SubTitle>{candidate.business_name}</SubTitle>
               </Box>
             </Box>
           </Box>

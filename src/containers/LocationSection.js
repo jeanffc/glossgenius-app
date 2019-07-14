@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import LocationView from "../components/LocationView";
 
 const mapStateToProps = state => ({
+    pending: state.candidates.pending,
     error: state.candidates.error,
-    candidates: state.candidates.candidates,
-    pending: state.candidates.pending
+    location: state.candidates
 });
 
 export default connect(
