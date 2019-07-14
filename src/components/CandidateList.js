@@ -14,7 +14,7 @@ const CandidateList = ({ candidates, actions }) => (
   <List>
     {console.log(candidates)}
     {candidates.map(candidate => (
-      <CandidateItem key={candidate.id} candidate={candidate} {...actions} />
+      <CandidateItem key={candidates.indexOf(candidate)} candidate={candidate} {...actions} />
     ))}
   </List>
 );
@@ -22,8 +22,8 @@ const CandidateList = ({ candidates, actions }) => (
 CandidateList.propTypes = {
   candidates: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      full_name: PropTypes.string.isRequired,
       approved: PropTypes.bool.isRequired
     }).isRequired
   ).isRequired,

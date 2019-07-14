@@ -4,7 +4,9 @@ import * as CandidateActions from "../store/actions/candidates";
 import CandidateList from "../components/CandidateList";
 
 const mapStateToProps = state => ({
-  candidates: state.candidates
+  error: state.candidates.error,
+  candidates: state.candidates.candidates,
+  pending: state.candidates.pending
 });
 
 const mapDispatchToProps = dispatch => ({

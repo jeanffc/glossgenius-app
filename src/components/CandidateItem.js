@@ -59,10 +59,10 @@ export default class CandidateItem extends Component {
             </Box>
             <Box display="flex" flexDirection="column" style={textContainer}>
               <Box>
-                <label>{candidate.name}</label>
+                <label>{candidate.full_name}</label>
               </Box>
               <Box>
-                <label>{candidate.name}</label>
+                <label>{candidate.business_name}</label>
               </Box>
             </Box>
           </Box>

@@ -16,15 +16,19 @@ const SubTitle = styled.p`
   opacity: 0.6;
 `;
 
-const HeaderSection = () => (
+const HeaderSection = ({ admin }) => (
   <Header>
-    <h1>admin.name</h1>
+    <h1>{admin}</h1>
     <Title>Action Required!</Title>
     <SubTitle>Please indicate who you will approve</SubTitle>
   </Header>
 );
 
+const mapStateToProps = state => ({
+  admin: state.candidates.location_admin_name
+});
+
 export default connect(
-  null,
-  {}
+  mapStateToProps,
+  null
 )(HeaderSection);
