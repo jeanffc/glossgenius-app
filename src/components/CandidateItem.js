@@ -64,7 +64,7 @@ export default class CandidateItem extends Component {
       candidate,
       approveCandidate,
       denyCandidate,
-      showDialog
+      // showDialog
     } = this.props;
 
     return (
@@ -95,7 +95,7 @@ export default class CandidateItem extends Component {
 
             <DenyButton
               onClick={() => {
-                // showDialog("Are you sure you want to decline this person?");
+                // showDialog("Are you sure you want to decline this person?"); 
                 denyCandidate(candidate.id);
               }}
             >
