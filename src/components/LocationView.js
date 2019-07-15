@@ -8,6 +8,7 @@ const LocationItem = styled.div`
   background: #191919;
   border-radius: 4px;
   padding: 15px;
+  margin: 50px 0 0 0;
 `;
 
 const Title = styled.p`
