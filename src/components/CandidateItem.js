@@ -47,7 +47,7 @@ const SubTitle = styled.p`
 `;
 
 const textContainer = {
-  marginLeft: 20,
+  marginLeft: 20
 };
 
 export default class CandidateItem extends Component {
@@ -60,12 +60,22 @@ export default class CandidateItem extends Component {
   state = {};
 
   render() {
-    const { candidate, approveCandidate, denyCandidate } = this.props;
+    const {
+      candidate,
+      approveCandidate,
+      denyCandidate,
+      showDialog
+    } = this.props;
 
     return (
       <ListItem>
         <Box display="flex" flexDirection="row">
-          <Box display="flex" flexDirection="row" alignItems="center" flexGrow={1}>
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            flexGrow={1}
+          >
             <Box>
               <Avatar>H</Avatar>
             </Box>
@@ -83,7 +93,12 @@ export default class CandidateItem extends Component {
               <IoIosCheckmark size={26} />
             </ApproveButton>
 
-            <DenyButton onClick={() => denyCandidate(candidate.id)}>
+            <DenyButton
+              onClick={() => {
+                // showDialog("Are you sure you want to decline this person?");
+                denyCandidate(candidate.id);
+              }}
+            >
               <IoIosClose size={26} />
             </DenyButton>
           </Box>

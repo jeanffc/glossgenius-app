@@ -10,11 +10,11 @@ const List = styled.ul`
   margin: 0;
 `;
 
-const CandidateList = ({ candidates, actions }) => (
+const CandidateList = ({ candidates, candidateActions, dialogActions }) => (
   <List>
     {console.log(candidates)}
     {candidates.map(candidate => (
-      <CandidateItem key={candidates.indexOf(candidate)} candidate={candidate} {...actions} />
+      <CandidateItem key={candidates.indexOf(candidate)} candidate={candidate} {...candidateActions} {...dialogActions}/>
     ))}
   </List>
 );
@@ -27,7 +27,8 @@ CandidateList.propTypes = {
       approved: PropTypes.bool.isRequired
     }).isRequired
   ).isRequired,
-  actions: PropTypes.object.isRequired
+  candidateActions: PropTypes.object.isRequired,
+  dialogActions: PropTypes.object.isRequired
 };
 
 export default CandidateList;
