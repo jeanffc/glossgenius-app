@@ -14,12 +14,13 @@ const ListItem = styled.li`
 const ApproveButton = styled.button`
   background: none;
   color: #8ca564;
-  border: 2px solid #8ca564;
   border-radius: 100%;
   height: 30px;
   width: 30px;
   padding: 0;
   margin: 0 0 0 20px;
+  border: ${props =>
+    props.type === "approved" ? "none" : "2px solid #8ca564"};
 `;
 
 const DenyButton = styled.button`
@@ -31,6 +32,8 @@ const DenyButton = styled.button`
   width: 30px;
   padding: 0;
   margin: 0 0 0 20px;
+  display: ${props =>
+    props.type === "approved" ? "none" : "block"};
 `;
 
 const Title = styled.p`
@@ -63,12 +66,12 @@ export default class CandidateItem extends Component {
     const {
       candidate,
       approveCandidate,
-      denyCandidate,
+      denyCandidate
       // showDialog
     } = this.props;
 
     return (
-      <ListItem>
+      <ListItem type={candidate.approved ? "approved" : null}>
         <Box display="flex" flexDirection="row">
           <Box
             display="flex"
@@ -89,13 +92,17 @@ export default class CandidateItem extends Component {
             </Box>
           </Box>
           <Box display="flex" flexDirection="row" alignItems="center">
-            <ApproveButton onClick={() => approveCandidate(candidate.id)}>
+            <ApproveButton
+              type={candidate.approved ? "approved" : null}
+              onClick={() => approveCandidate(candidate.id)}
+            >
               <IoIosCheckmark size={26} />
             </ApproveButton>
 
             <DenyButton
+              type={candidate.approved ? "approved" : null}
               onClick={() => {
-                // showDialog("Are you sure you want to decline this person?"); 
+                // showDialog("Are you sure you want to decline this person?");
                 denyCandidate(candidate.id);
               }}
             >
